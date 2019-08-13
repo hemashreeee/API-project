@@ -1,0 +1,26 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <style>
+        body{
+            background-color:rgb(244, 250, 255)
+        }
+        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API Data Search</title>
+        <center><h1 style = "font-family:Calibri; font-size:30px;font-style:bold;">Search</h1></center>
+
+<center><form id="searchform" action="{% url 'results' %}" method="GET" value="{{request.GET.q}}">
+    <input type="text" name="q" value="{{request.GET.q}}" style ="font-family: Calibri" placeholder="Search"/>
+    <button type="button" onclick="searchform.submit()"style="font-family: Calibri" >Search</button>
+    </form>
+    </center>
+
+</body>
+</html>
+

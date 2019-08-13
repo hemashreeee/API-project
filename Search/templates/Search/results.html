@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+        <body style="background-color: rgb(244, 250, 255)">
+<br/>
+<form id="searchform" action="{% url 'results' %}" method="GET" value="{{request.GET.q}}">
+        <input type="text" name="q" value="{{request.GET.q}}" style ="font-family: Calibri" placeholder="Search"/>
+        <button type="button" onclick="searchform.submit()"style="font-family: Calibri" >Search</button>
+        </form>
+<br/>    
+
+{% if datasets %}
+<h1 style="font-family: Calibri">Results for <b> '{{ request.GET.q }}'</b></h1>
+{% for dataset in datasets %}
+<br/>
+<b><a style="font-size: 20px; font-family: Calibri">{{ dataset.datasets_available }}</a></b>
+<br/>
+<a style="font-family: Calibri">{{ dataset.data_source }}</a>
+<br/>
+<a style="font-family: Calibri">{{ dataset.brief_description_of_datasets }}</a>
+<br/>
+<a style="font-family: Calibri">{{ dataset.country }}</a>
+<br/>
+<a style="font-family: Calibri" href='{{ dataset.api_documentation }}'>{{ dataset.api_documentation }}</a>
+<br/>
+{% endfor %}
+{% else %}
+<h1><p style="font-family:Calibri">No search results for this query</p></h1>
+{% endif %}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+

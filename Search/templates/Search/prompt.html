@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+        <body style="background-color:rgb(244, 250, 255)">
+<br/>
+<form id="searchform" action="{% url 'results' %}" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="Search" style="font-family: Calibri"/>
+<button type="button" onclick="searchform.submit()" style="font-family: Calibri" >Search</button>
+</form>
+<br/>    
+
